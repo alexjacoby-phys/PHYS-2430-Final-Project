@@ -28,8 +28,8 @@ up = (1+0*im)*sparse([1,0,0])
 zero = (1+0*im)*sparse([0,1,0])
 down = (1+0*im)*sparse([0,0,1])
 AKLT = zeros(Complex{Float64},2,3,2)
-AKLT[1,:,1] = sqrt(2)*zero
-AKLT[2,:,2] = -sqrt(2)*zero
+AKLT[1,:,1] = (1/sqrt(2))*zero
+AKLT[2,:,2] = -(1/sqrt(2))*zero
 AKLT[1,:,2] = -up
 AKLT[2,:,1] = down
 
@@ -135,7 +135,8 @@ function BuildVBS(ContraMat::Array{Int64,2})
     end
     return normalize(psi)
 end
-#permute
+
+
 
 #ContraMat = [0 1 0 0 ; 0 0 0 1 ; 1 0 0 0 ; 0 0 1 0]
 #BuildVBS(ContraMat)
