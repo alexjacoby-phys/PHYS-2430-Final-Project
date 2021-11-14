@@ -69,6 +69,21 @@ end
 
 function Distances(perm::Vector{Int64},N::Int64#=this is an NxN square lattice=#)
     positions = Locations_xy(perm,N)
+    positions0 = Locations_xy(Vector(1:9),N)
+    L = N^2
+    distarray = []
+    for i in 1:L
+        push!(distarray,norm(positions[i]-positions0[i]))
+    end
+    return Vector{Float64}(distarray)
+end
+
+
+#=
+
+THIS VERSION OF THIS FUNCTION HAS A MAJOR bug
+function Distances(perm::Vector{Int64},N::Int64#=this is an NxN square lattice=#)
+    positions = Locations_xy(perm,N)
     L = N^2
     distarray = []
     push!(distarray,norm(positions[1]-positions[L]))
@@ -77,6 +92,12 @@ function Distances(perm::Vector{Int64},N::Int64#=this is an NxN square lattice=#
     end
     return Vector{Float64}(distarray)
 end
+=#
+
+
+
+
+
 #=
 sum(Distances(walks(9,10)[1],3))
 Locations_xy(walks(9,10)[3],3)

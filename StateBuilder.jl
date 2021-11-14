@@ -2,7 +2,9 @@ using LinearAlgebra
 using Arpack
 using SparseArrays
 
-#=
+#=\
+
+These are no longer accurate!
 sites are linked in the following pattern in the 3x3 case
 . _ . _  .
 |. _ . _ .
