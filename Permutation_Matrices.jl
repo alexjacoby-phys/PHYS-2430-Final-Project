@@ -68,9 +68,9 @@ end
 
 
 function Distances(perm::Vector{Int64},N::Int64#=this is an NxN square lattice=#)
-    positions = Locations_xy(perm,N)
-    positions0 = Locations_xy(Vector(1:9),N)
     L = N^2
+    positions = Locations_xy(perm,N)
+    positions0 = Locations_xy(Vector(1:L),N)
     distarray = []
     for i in 1:L
         push!(distarray,norm(positions[i]-positions0[i]))

@@ -20,7 +20,7 @@ for i in 1:samples
 end
 avglength
 α = 0.2
-β = 2
+β = 1.4
 for i in 1:samples
     dist = sum(Distances(paths[i],3))/L
     w = ((dist-β)/α)^2
