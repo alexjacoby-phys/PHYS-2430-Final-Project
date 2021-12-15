@@ -81,4 +81,13 @@ function Partial_Trace(rho,sites0::Vector{Int64},L::Int64)
     return DM
 end
 
+function SvN(svalues::Vector{Float64},cutoff::Float64)
+    schmidtvec = real(droptol!(sparse(svalues),cutoff))
+    S=0
+    for i in 1:length(schmidtvec)
+        S = S+ schmidtvec[i]*log(schmidtvec[i])
+    end
+    return S
+end
+
 #function Sparse_TR_DM(sites::Vector{Int64}) this is a test
